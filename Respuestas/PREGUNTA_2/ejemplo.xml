@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<animales>
+	<mamiferos>
+		<id>A01</id>
+		<nombre>Osos</nombre>
+		<comida>Peces</comida>
+	</mamiferos>
+	\n<mamiferos>
+		<id>A02</id>
+		<nombre>Guacamayo</nombre>
+		<comida>Plantas</comida>
+	</mamiferos>
+	<reptiles>
+		<id>A03</id>
+		<nombre>Dinosaurios</nombre>
+		<comida>Carne</comida>
+	</reptiles>
+	<aves>
+		<id>A04</id>
+		<nombre>El Perico</nombre>
+		<comida>Diente de León</comida>
+	</aves>
+	<peces>
+		<id>A05</id>
+		<nombre>Patos</nombre>
+		<comida>Maiz</comida>
+	</peces>
+	<anfibios>
+		<id>A06</id>
+		<nombre>Vaca</nombre>
+		<comida>Pasto</comida>
+	</anfibios>
+</animales>

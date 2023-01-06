@@ -1,0 +1,66 @@
+{
+	"peliculas":[{
+		"Genero": "Terror",
+		"Nombre": "Annabel ",
+		"Protagonista": "Patrick Williams"
+	},
+	{
+		"Genero": "Terror",
+		"Nombre": "Terror en Silent Hills",
+		"Protagonista": "Yodel Fredder"
+	},
+	{
+		"Genero": "Terror",
+		"Nombre": "It ",
+		"Protagonista": "Bill Skarsgård"
+	},
+	{
+		"Genero": "Terror",
+		"Nombre": "EL conjuro",
+		"Protagonista": "Patrick Williams"
+	},
+	{
+		"Genero": "Accion",
+		"Nombre": "John Wick ",
+		"Protagonista": "Yodel Fredder"
+	},
+
+	{
+		"Genero": "Accion",
+		"Nombre": "Rambo ",
+		"Protagonista": "Bill Skarsgård"
+	},
+
+	{
+		"Genero": "Accion",
+		"Nombre": "Mision Imposible ",
+		"Protagonista": "Tom Cruise"
+	},
+
+	{
+		"Genero": "Accion",
+		"Nombre": "Duro de Matar",
+		"Protagonista": "Patrick Williams"
+	},
+	{
+		"Genero": "Drama",
+		"Nombre": "After",
+		"Protagonista": "Yodel Fredder"
+	},
+	{
+		"Genero": "Drama",
+		"Nombre": "El club de la Pelea",
+		"Protagonista": "Bill Skarsgård"
+	},
+	{
+		"Genero": "Drama",
+		"Nombre": "EL Origen",
+		"Protagonista": "Patrick Williams"
+	},
+	{
+		"Genero": "Drama",
+		"Nombre": "El padrino",
+		"Protagonista": "Yodel Fredder"
+	}	
+	]
+}

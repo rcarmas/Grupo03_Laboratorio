@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>LABORATORIO</title>
+		<style type="text/css">
+			#background{position:fixed; width:99%; height:130%;}
+			#fixed {position:absolute; top: 0px; left: 0px;}
+		</style>
+		<style>
+			table,th,td {
+			  border : 1px solid black;
+			  border-collapse: collapse;
+			}
+			th,td {
+			  padding: 5px;
+			}
+			</style>
+	</head>
+	<body>
+		<div>
+			<img id="background" src="../../Imagenes/fondo.jpg"/> 
+		</div>
+		<div id="fixed">
+			</br></br></br>
+			<div style="padding-left:510px;">
+				<img src="../../Imagenes/selloespe.jpg" alt="ESPE" height="100" >
+			</div>
+			<div style="text-align: center;">
+				<h2>
+					<p style="text-align: center" style="color:#165014" ;>EJERCICIO 1</p>
+					
+				</h2>
+				<h3>
+					<p  style="color:#165014" ;>1. Analizar una cadena de texto en un objeto DOM XML y extraer esa
+						Información con JavaScript</p>
+				</h3>
+			</div>
+			
+			
+			<div style=" display: flex; flex-direction: row; justify-content: center;">
+				<div style="display: flex; justify-content: center; flex-direction: column; align-items: center; width: 50%;">
+					<h2><p> Código</p></h2>
+					<img src="EJERCICIO_4_CODIGO.png" width="80%" alt="">
+					<h2><p> XML</p></h2>
+					<img src="EJERCICIO_4_xml.png" width="80%" alt="">
+				</div>
+				<div style="display: flex; justify-content: baseline; flex-direction: column; align-items: center; width: 45%;">
+					<h2><p style="text-align: center"> Ejecución</p></h2>
+					<button type="button" onclick="loadDoc()">Obtener recopilación de películas</button>
+					<br><br>
+					<table id="demo"></table>
+			</div>
+
+            <script>
+				function loadDoc() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  myFunction(this);
+					}
+				  };
+				  xhttp.open("GET", "ventas.xml", true);
+				  xhttp.send();
+				}
+				function myFunction(xml) {
+				  var i;
+				  var xmlDoc = xml.responseXML;
+				  var table="<tr><th>Pelicula</th><th>Genero</th></tr>";
+				  var x = xmlDoc.getElementsByTagName("PELICULA");
+				  for (i = 0; i <x.length; i++) { 
+					table += "<tr><td>" +
+					x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue +
+					"</td><td>" +
+					x[i].getElementsByTagName("genero")[0].childNodes[0].nodeValue +
+					"</td></tr>";
+				  }
+				  document.getElementById("demo").innerHTML = table;
+				}
+				</script>
+			</div>
+			
+				<div style="padding-left:250px; ">
+
+				<br><br><a href="../../index.html" style="font-size: 20px;">Regresar</a><br> <br>
+				</div>
+			</div>						
+		</div> 		
+	</body>
+</html>
