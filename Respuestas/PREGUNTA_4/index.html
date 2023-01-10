@@ -2,18 +2,24 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>LABORATORIO</title>
-		<style type="text/css">
-			#background{position:fixed; width:99%; height:130%;}
-			#fixed {position:absolute; top: 0px; left: 0px;}
-		</style>
+		<title>Pregunta 4</title>
+		  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		  <style type="text/css">
+		    #background{position:absolute; width:99%; height:130%;}
+		    #fixed {position:absolute; top: 0px; left: 0px;}
+		  </style>
+
 		<style>
 			table,th,td {
 			  border : 1px solid black;
 			  border-collapse: collapse;
+			  margin-left: auto;
+			  margin-right: auto;
 			}
 			th,td {
-			  padding: 5px;
+			  padding: 10px;
+			  margin-left: auto;
+			  margin-right: auto;
 			}
 			</style>
 	</head>
@@ -24,60 +30,63 @@
 		<div id="fixed">
 			</br></br></br>
 			<div style="padding-left:510px;">
-				<img src="../../Imagenes/selloespe.jpg" alt="ESPE" height="100" >
+				<img src="../../Imagenes/selloespe.jpg"  width="65%" align="center">
 			</div>
 			<div style="text-align: center;">
-				<h2>
-					<p style="text-align: center" style="color:#165014" ;>EJERCICIO 1</p>
-					
-				</h2>
-				<h3>
-					<p  style="color:#165014" ;>1. Analizar una cadena de texto en un objeto DOM XML y extraer esa
-						Información con JavaScript</p>
-				</h3>
+				<h1>Pregunta 4</h1>
 			</div>
+			<p style="padding-left:10%;">4) Mostrar datos XML en una tabla utilizando AJAX</p>
 			
-			
-			<div style=" display: flex; flex-direction: row; justify-content: center;">
-				<div style="display: flex; justify-content: center; flex-direction: column; align-items: center; width: 50%;">
-					<h2><p> Código</p></h2>
-					<img src="EJERCICIO_4_CODIGO.png" width="80%" alt="">
-					<h2><p> XML</p></h2>
-					<img src="EJERCICIO_4_xml.png" width="80%" alt="">
-				</div>
-				<div style="display: flex; justify-content: baseline; flex-direction: column; align-items: center; width: 45%;">
-					<h2><p style="text-align: center"> Ejecución</p></h2>
-					<button type="button" onclick="loadDoc()">Obtener recopilación de películas</button>
+				<center><div >
+					<button id="show-table-button">Obtener Tabla</button>
 					<br><br>
-					<table id="demo"></table>
-			</div>
+				
+				<table id="table-ventas" style="display:none">
+				  <thead>
+				    <tr>
+				      <th>Numero</th>
+				      <th>Titulo</th>
+				      <th>Descripcion</th>
+				      <th>Precio Unidad</th>
+				      <th>Cantidad</th>
+				      <th>Precio Total</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  </tbody>
+				</table>
 
+					<br>
+			<button onclick="window.location.href='../../index.html'">Menu principal</button>
+			</div></center>
+			<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
             <script>
-				function loadDoc() {
-				  var xhttp = new XMLHttpRequest();
-				  xhttp.onreadystatechange = function() {
-					if (this.readyState == 4 && this.status == 200) {
-					  myFunction(this);
-					}
-				  };
-				  xhttp.open("GET", "ventas.xml", true);
-				  xhttp.send();
-				}
-				function myFunction(xml) {
-				  var i;
-				  var xmlDoc = xml.responseXML;
-				  var table="<tr><th>Pelicula</th><th>Genero</th></tr>";
-				  var x = xmlDoc.getElementsByTagName("PELICULA");
-				  for (i = 0; i <x.length; i++) { 
-					table += "<tr><td>" +
-					x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue +
-					"</td><td>" +
-					x[i].getElementsByTagName("genero")[0].childNodes[0].nodeValue +
-					"</td></tr>";
-				  }
-				  document.getElementById("demo").innerHTML = table;
-				}
-				</script>
+				$(document).ready(function() {
+				  $('#show-table-button').click(function() {
+				    $.ajax({
+				      url: 'ventas.xml',
+				      dataType: 'xml',
+				      success: function(xml) {
+				        $('PRODUCTO', xml).each(function() {
+				          var producto = $(this);
+				          var row = $('<tr>');
+				          var numeroCell = $('<td>').text(producto.find('NUMERO').text());
+				          var tituloCell = $('<td>').text(producto.find('TITLE').text());
+				          var descripcionCell = $('<td>').text(producto.find('DESCRIPCION').text());
+				          var precioUCell = $('<td>').text(producto.find('PRECIOU').text());
+				          var cantidadCell = $('<td>').text(producto.find('CANTIDAD').text());
+				          var precioTCell = $('<td>').text(producto.find('PRECIOT').text());
+
+				          row.append(numeroCell, tituloCell, descripcionCell, precioUCell, cantidadCell, precioTCell);
+				          $('#table-ventas tbody').append(row);
+				        });
+				        $('#table-ventas').show();
+				      }
+				    });
+				  });
+				});
+			</script>
+			
 			</div>
 			
 				<div style="padding-left:250px; ">
@@ -88,3 +97,4 @@
 		</div> 		
 	</body>
 </html>
+

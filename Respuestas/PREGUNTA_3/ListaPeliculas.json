@@ -12,23 +12,23 @@
 	{
 		"Genero": "Terror",
 		"Nombre": "It ",
-		"Protagonista": "Bill Skarsgård"
+		"Protagonista": "Tom Cruise"
 	},
 	{
 		"Genero": "Terror",
 		"Nombre": "EL conjuro",
-		"Protagonista": "Patrick Williams"
+		"Protagonista": "Vera Farmiga"
 	},
 	{
 		"Genero": "Accion",
 		"Nombre": "John Wick ",
-		"Protagonista": "Yodel Fredder"
+		"Protagonista": "Patrick Williams"
 	},
 
 	{
 		"Genero": "Accion",
 		"Nombre": "Rambo ",
-		"Protagonista": "Bill Skarsgård"
+		"Protagonista": "Yodel Fredder"
 	},
 
 	{
@@ -40,27 +40,27 @@
 	{
 		"Genero": "Accion",
 		"Nombre": "Duro de Matar",
-		"Protagonista": "Patrick Williams"
+		"Protagonista": "Vera Farmiga"
 	},
 	{
 		"Genero": "Drama",
 		"Nombre": "After",
-		"Protagonista": "Yodel Fredder"
-	},
-	{
-		"Genero": "Drama",
-		"Nombre": "El club de la Pelea",
-		"Protagonista": "Bill Skarsgård"
-	},
-	{
-		"Genero": "Drama",
-		"Nombre": "EL Origen",
 		"Protagonista": "Patrick Williams"
 	},
 	{
 		"Genero": "Drama",
-		"Nombre": "El padrino",
+		"Nombre": "El club de la Pelea",
 		"Protagonista": "Yodel Fredder"
+	},
+	{
+		"Genero": "Drama",
+		"Nombre": "EL Origen",
+		"Protagonista": "Tom Cruise"
+	},
+	{
+		"Genero": "Drama",
+		"Nombre": "El padrino",
+		"Protagonista": "Vera Farmiga"
 	}	
 	]
 }
